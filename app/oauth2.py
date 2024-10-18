@@ -10,7 +10,7 @@ from .models import User
 # Secret key for signing the JWT
 SECRET_KEY = "aditya6969"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 120
+ACCESS_TOKEN_EXPIRE_MINUTES = 200
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
