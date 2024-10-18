@@ -1,0 +1,18 @@
+from fastapi import FastAPI
+from .routers import student, job_search, login
+from .database import engine
+from . import models
+
+# Create database tables
+models.Base.metadata.create_all(bind=engine)
+
+# FastAPI instance
+app = FastAPI()
+
+@app.get("/")
+def hello():
+    return {"message": "Hello"}
+
+app.include_router(student.router)
+app.include_router(job_search.router)
+app.include_router(login.router)
