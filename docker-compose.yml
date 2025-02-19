@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    platform: linux/arm64
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:NW69XRPG@db/jobsy  # Adjust as needed
+
+  db:
+    image: postgres:latest
+    platform: linux/arm64
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: NW69XRPG
+      POSTGRES_DB: jobsy
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

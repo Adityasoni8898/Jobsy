@@ -1,0 +1,5 @@
+resumes
+venv
+frontend
+app/.env
+.DS_Store
