@@ -4,3 +4,5 @@ frontend
 app/.env
 .DS_Store
 nvenv
+.DS_Store
+.gitignore
